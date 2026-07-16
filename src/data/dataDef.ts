@@ -86,13 +86,14 @@ export interface PortfolioItem {
 /**
  * Resume section
  */
+// Inside src/data/dataDef.ts
 export interface TimelineItem {
   date: string;
   location: string;
   title: string;
   content: JSX.Element;
+  gpa?: string; // Add this line
 }
-
 /**
  * Testimonial section
  */
