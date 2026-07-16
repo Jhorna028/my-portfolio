@@ -1,5 +1,6 @@
 import {FC, memo} from 'react';
-import {education, experience, SectionId, skills} from '../../../data/data';
+
+import {education, SectionId, skills} from '../../../data/data';
 import Section from '../../Layout/Section';
 import ResumeSection from './ResumeSection';
 import {SkillGroup} from './Skills';
@@ -15,7 +16,7 @@ const Resume: FC = memo(() => {
           <ResumeSection title="Education">
             <div className="flex flex-col gap-y-6">
               {education.map((item, index) => (
-                <div key={`${item.title}-${index}`} className="group relative rounded-xl border border-neutral-700 bg-neutral-800 p-6 transition-all hover:border-orange-500 hover:shadow-lg hover:shadow-orange-500/10">
+                <div className="group relative rounded-xl border border-neutral-700 bg-neutral-800 p-6 transition-all hover:border-orange-500 hover:shadow-lg hover:shadow-orange-500/10" key={`${item.title}-${index}`}>
                    <TimelineItem item={item} />
                 </div>
               ))}

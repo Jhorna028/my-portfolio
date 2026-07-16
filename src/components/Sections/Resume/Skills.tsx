@@ -1,4 +1,5 @@
 import {FC, memo} from 'react';
+
 import {SkillGroup as SkillGroupType} from '../../../data/dataDef'; // Use an alias for the type
 
 export const SkillGroup: FC<{skillGroup: SkillGroupType}> = memo(({skillGroup}) => {
@@ -12,8 +13,8 @@ export const SkillGroup: FC<{skillGroup: SkillGroupType}> = memo(({skillGroup}) 
       <div className="flex flex-wrap gap-3">
         {skills.map((skill, index) => (
           <div
-            key={`${skill.name}-${index}`}
             className="rounded-full border border-neutral-700 bg-neutral-800 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:border-orange-500 hover:bg-neutral-700"
+            key={`${skill.name}-${index}`}
           >
             {skill.name}
           </div>

@@ -1,5 +1,6 @@
 import {AcademicCapIcon} from '@heroicons/react/24/outline'; // Or use dynamic icons
 import {FC, memo} from 'react';
+
 import {TimelineItem} from '../../../data/dataDef';
 
 const TimelineItemComponent: FC<{item: TimelineItem}> = memo(({item}) => {

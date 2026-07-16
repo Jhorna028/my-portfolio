@@ -26,12 +26,12 @@ const Portfolio: FC = memo(() => {
             
             return (
               <div
-                key={`${title}-${index}`}
                 className={classNames(
                   'group relative flex flex-col justify-between rounded-xl p-7 transition-all duration-300 ease-in-out',
                   'bg-slate-800/80 backdrop-blur-sm border border-slate-700',
                   'hover:-translate-y-1 hover:border-orange-500 hover:shadow-[0_8px_30px_rgb(249,115,22,0.15)]'
-                )}>
+                )}
+                key={`${title}-${index}`}>
                 
                 {/* Decorative top bar on hover */}
                 <div className="absolute left-0 top-0 h-1 w-full rounded-t-xl bg-gradient-to-r from-orange-400 to-orange-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -46,8 +46,8 @@ const Portfolio: FC = memo(() => {
                     <a
                       className="group/link flex items-center gap-2 text-sm font-semibold text-orange-400 transition-colors hover:text-orange-300 w-max"
                       href={url}
-                      target="_blank"
-                      rel="noopener noreferrer">
+                      rel="noopener noreferrer"
+                      target="_blank">
                       View Project
                       <ArrowTopRightOnSquareIcon className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
                     </a>

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+
 import Image from 'next/image';
 import {FC, memo} from 'react';
 
