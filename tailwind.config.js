@@ -6,6 +6,11 @@ module.exports = {
     extend: {
       colors: {
         yellow: '#efc603',
+        'brand-dark': '#1a3a4c',
+        'brand-card': '#102336',
+        'brand-cyan': '#00e5ff',
+        'brand-cyan-dark': '#00b4cc',
+        'brand-nav': '#111b2b',
       },
       keyframes: {
         typing: {

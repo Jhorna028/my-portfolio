@@ -1,5 +1,14 @@
 import {Dialog, Transition} from '@headlessui/react';
-import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
+import {
+  AcademicCapIcon,
+  Bars3BottomRightIcon,
+  BriefcaseIcon,
+  CodeBracketIcon,
+  DocumentArrowDownIcon,
+  EnvelopeIcon,
+  HomeIcon,
+  UserIcon,
+} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
@@ -12,7 +21,7 @@ export const headerID = 'headerNav';
 const Header: FC = memo(() => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
   const navSections = useMemo(
-    () => [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Contact],
+    () => [SectionId.Hero, SectionId.About, SectionId.Skills, SectionId.Portfolio, SectionId.Resume, SectionId.Contact],
     [],
   );
 
@@ -30,25 +39,67 @@ const Header: FC = memo(() => {
   );
 });
 
+const getSectionTitle = (section: string) => {
+  if (section === SectionId.Hero) return 'Home';
+  if (section === SectionId.About) return 'About Me';
+  if (section === SectionId.Resume) return 'Experience';
+  if (section === SectionId.Portfolio) return 'Projects';
+  if (section === SectionId.Skills) return 'Skills';
+  if (section === SectionId.Contact) return 'Contact';
+  return section;
+};
+
+const getSectionIcon = (section: string) => {
+  switch (section) {
+    case SectionId.Hero:
+      return <HomeIcon className="mr-1 h-5 w-5" />;
+    case SectionId.About:
+      return <UserIcon className="mr-1 h-5 w-5" />;
+    case SectionId.Skills:
+      return <CodeBracketIcon className="mr-1 h-5 w-5" />;
+    case SectionId.Portfolio:
+      return <BriefcaseIcon className="mr-1 h-5 w-5" />;
+    case SectionId.Resume:
+      return <AcademicCapIcon className="mr-1 h-5 w-5" />;
+    case SectionId.Contact:
+      return <EnvelopeIcon className="mr-1 h-5 w-5" />;
+    default:
+      return null;
+  }
+};
+
 const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
   ({navSections, currentSection}) => {
     const baseClass =
-      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 sm:hover:text-orange-500 text-neutral-100';
-    const activeClass = classNames(baseClass, 'text-orange-500');
-    const inactiveClass = classNames(baseClass, 'text-neutral-100');
+      'flex items-center -m-1.5 p-1.5 font-bold transition-colors duration-300 focus:outline-none hover:text-brand-cyan text-white';
+    const activeClass = classNames(baseClass, 'text-brand-cyan border-b-2 border-brand-cyan');
+    const inactiveClass = classNames(baseClass, 'text-white');
     return (
-      <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
-        <nav className="flex justify-center gap-x-8">
-          {navSections.map(section => (
-            <NavItem
-              activeClass={activeClass}
-              current={section === currentSection}
-              inactiveClass={inactiveClass}
-              key={section}
-              section={section}
-            />
-          ))}
-        </nav>
+      <header className="fixed top-0 z-50 hidden w-full bg-brand-nav px-8 py-4 shadow-lg sm:block" id={headerID}>
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
+          <div className="text-2xl font-bold italic tracking-wide text-white">
+            <span className="text-brand-cyan">J</span>HORNA
+          </div>
+          <nav className="flex items-center gap-x-6 text-sm">
+            {navSections.map(section => (
+              <NavItem
+                activeClass={activeClass}
+                current={section === currentSection}
+                inactiveClass={inactiveClass}
+                key={section}
+                section={section}
+              />
+            ))}
+          </nav>
+          <div>
+            <a
+              className="flex items-center rounded bg-brand-cyan px-4 py-2 text-sm font-bold text-black hover:bg-brand-cyan-dark"
+              href="#resume">
+              <DocumentArrowDownIcon className="mr-2 h-5 w-5" />
+              Resume
+            </a>
+          </div>
+        </div>
       </header>
     );
   },
@@ -130,7 +181,8 @@ const NavItem: FC<{
       href={`/#${section}`}
       key={section}
       onClick={onClick}>
-      {section}
+      {getSectionIcon(section)}
+      {getSectionTitle(section)}
     </Link>
   );
 });

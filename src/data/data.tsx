@@ -1,9 +1,4 @@
-import {
-  AcademicCapIcon,
-  BuildingOffice2Icon,
-  MapIcon,
-  SparklesIcon,
-} from '@heroicons/react/24/outline';
+import {AcademicCapIcon, BuildingOffice2Icon, MapIcon, SparklesIcon} from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
@@ -11,6 +6,8 @@ import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
+import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
+import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
 import profilepic from '../images/profilepic.jpg';
 import {
   About,
@@ -43,7 +40,6 @@ export const SectionId = {
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
-  
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -57,10 +53,16 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I architect <strong className="text-stone-100">secure, intelligent digital environments</strong>. As a Computer Science engineering student at United International University, my work operates at the intersection of <strong className="text-stone-100">Networking, Machine Learning, and Modern Web Design</strong>.
+        I architect <strong className="text-stone-100">secure, intelligent digital environments</strong>. As a Computer
+        Science engineering student at United International University, my work operates at the intersection of{' '}
+        <strong className="text-stone-100">Networking, Machine Learning, and Modern Web Design</strong>.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Equipped with a technical stack that includes Python, JavaScript, C++, React, Node.js, PHP, MySQL, and MongoDB, I am driven by the mechanics of how complex technologies function under the hood. From deploying full-stack frameworks to investigating ML-driven threat detection models, Whether I am diving into a new research paper or debugging a web project, my primary objective is to continuously grow and build smart, secure solutions that tackle real-world problems.
+        Equipped with a technical stack that includes Python, JavaScript, C++, React, Node.js, PHP, MySQL, and MongoDB,
+        I am driven by the mechanics of how complex technologies function under the hood. From deploying full-stack
+        frameworks to investigating ML-driven threat detection models, Whether I am diving into a new research paper or
+        debugging a web project, my primary objective is to continuously grow and build smart, secure solutions that
+        tackle real-world problems.
       </p>
     </>
   ),
@@ -125,28 +127,51 @@ export const skills: SkillGroup[] = [
 export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Comparative analysis of machine learning algorithms on CICIDS2017 dataset for network intrusion detection',
-    description: 'A collaborative machine learning research project evaluating intrusion detection systems using the CICIDS2017 dataset. Implemented the SMOTE-Tomek algorithm to resolve class imbalance and conducted a comprehensive comparative analysis of 10 algorithms across 5 families, evaluating performance against 14 distinct metrics.',
-    url: 'https://github.com/Jhorna028/ML_Project_Repost', // Replace with your actual link
-    image: porfolioImage1, 
+    description:
+      'A collaborative machine learning research project evaluating intrusion detection systems using the CICIDS2017 dataset. Implemented the SMOTE-Tomek algorithm to resolve class imbalance and conducted a comprehensive comparative analysis of 10 algorithms across 5 families, evaluating performance against 14 distinct metrics.',
+    url: 'https://github.com/Jhorna028/ML_Project_Repost',
+    image: porfolioImage1,
+    tags: ['Machine Learning', 'Python', 'SMOTE-Tomek', 'CICIDS2017'],
   },
   {
     title: 'SMART-FARMHUB',
-    description: 'Smart_farmhub began as an agricultural management platform built with [Technologies: Php, MYSQL, js, Html and CSS] to streamline farm resource tracking and monitoring. In a subsequent Computer Security course, we advanced the project by re-engineering the architecture, implementing 20+ robust security features to harden the system against vulnerabilities and ensure data integrity.',
-    url: 'https://github.com/Jhorna028/Security-based-project-20-security-features', // Replace with your actual link
+    description:
+      'Smart_farmhub began as an agricultural management platform built with [Technologies: Php, MYSQL, js, Html and CSS] to streamline farm resource tracking and monitoring. In a subsequent Computer Security course, we advanced the project by re-engineering the architecture, implementing 20+ robust security features to harden the system against vulnerabilities and ensure data integrity.',
+    url: 'https://github.com/Jhorna028/Security-based-project-20-security-features',
     image: porfolioImage2,
+    tags: ['PHP', 'MySQL', 'Security', 'JavaScript'],
   },
   {
-    title: 'Learning Management System (LMS) ',
-    description: 'Architected a comprehensive LMS platform to streamline educational content delivery and user engagement. Developed a scalable backend utilizing PHP, MySQL and JS, featuring sophisticated database-driven workflows for teacher-side grading, tiered attendance tracking, and dynamic student performance analytics.',
-    url: 'https://github.com/Jhorna028/Web_LMS_Project', // Replace with your actual link
+    title: 'Learning Management System (LMS)',
+    description:
+      'Architected a comprehensive LMS platform to streamline educational content delivery and user engagement. Developed a scalable backend utilizing PHP, MySQL and JS, featuring sophisticated database-driven workflows for teacher-side grading, tiered attendance tracking, and dynamic student performance analytics.',
+    url: 'https://github.com/Jhorna028/Web_LMS_Project',
     image: porfolioImage3,
+    tags: ['PHP', 'MySQL', 'Web Dev', 'LMS'],
   },
-
   {
-    title: 'Footstep Power Generation ',
-    description: 'A hardware project from my Electronics course focused on energy harvesting. We designed a system using piezoelectric sensors to capture kinetic energy from footsteps, engineered the conversion circuit to stabilize AC output into usable DC, and implemented an Arduino microcontroller to manage energy storage and power distribution for smart streetlights.',
-    url: 'https://github.com/Jhorna028/Electronic_Lab---Footstep-Power-Generator-', // Replace with your actual link
+    title: 'Footstep Power Generation',
+    description:
+      'A hardware project from my Electronics course focused on energy harvesting. We designed a system using piezoelectric sensors to capture kinetic energy from footsteps, engineered the conversion circuit to stabilize AC output into usable DC, and implemented an Arduino microcontroller to manage energy storage and power distribution for smart streetlights.',
+    url: 'https://github.com/Jhorna028/Electronic_Lab---Footstep-Power-Generator-',
     image: porfolioImage3,
+    tags: ['Hardware', 'Arduino', 'Sensors'],
+  },
+  {
+    title: 'RL Cliff Walking Q-Learning',
+    description:
+      'A Reinforcement Learning project solving the Cliff Walking navigation problem using the Q-Learning algorithm from scratch.',
+    url: 'https://github.com/Jhorna028/RL_Cliff_walking_QLearning_code',
+    image: porfolioImage4,
+    tags: ['Reinforcement Learning', 'Q-Learning', 'Python'],
+  },
+  {
+    title: 'InfraSync_BD',
+    description:
+      'An upcoming infrastructure synchronization platform designed to manage and streamline deployments efficiently in local environments.',
+    url: 'https://github.com/Jhorna028/InfraSync_BD',
+    image: porfolioImage5,
+    tags: ['Infrastructure', 'Sync', 'Deployment'],
   },
 ];
 
@@ -156,49 +181,52 @@ export const portfolioItems: PortfolioItem[] = [
 export const education: TimelineItem[] = [
   {
     date: '2023 - 2027',
-    gpa: 'CGPA: ', // Add your actual CGPA here
     location: 'United International University (UIU)',
     title: 'B.Sc. in Computer Science and Engineering',
     content: (
       <p>
-        Focusing on <strong>Network Security</strong>. Actively researching vehicular networks and edge computing, while building a strong foundation in Data Structures, Algorithms, and Machine Learning.
+        Focusing on <strong>Network Security</strong>. Actively researching vehicular networks and edge computing, while
+        building a strong foundation in Data Structures, Algorithms, and Machine Learning.
       </p>
     ),
   },
   {
     date: '2021',
-    gpa: 'GPA: ',
     location: 'Shiddeswari Girls College',
     title: 'Higher Secondary Certificate (HSC)',
     content: (
       <p>
-        Science Group. Focused on core physics, chemistry, and mathematics with a keen interest in computer science fundamentals.
+        Science Group. Focused on core physics, chemistry, and mathematics with a keen interest in computer science
+        fundamentals.
       </p>
     ),
   },
   {
     date: '2018',
-    gpa: 'GPA: ',
     location: 'Shiddeswari Girls College',
     title: 'Secondary School Certificate (SSC)',
     content: (
       <p>
-        Science Group. Built a solid academic foundation in mathematics and logic, sparking my initial interest in technology.
+        Science Group. Built a solid academic foundation in mathematics and logic, sparking my initial interest in
+        technology.
       </p>
     ),
   },
 ];
 
-
-
-export const experience: TimelineItem[] = [];
-
-/**
- * Fill Experiences when u have !!!!!
- */
-
-
-
+export const experience: TimelineItem[] = [
+  {
+    date: 'July 2026 - Present',
+    location: 'United International University (UIU)',
+    title: 'Undergraduate Assistant (UGA)',
+    content: (
+      <p>
+        Assisting in academic courses, guiding students through complex concepts, and evaluating assignments.
+        Contributing to a collaborative learning environment.
+      </p>
+    ),
+  },
+];
 
 /**
  * Contact section
@@ -210,8 +238,8 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'your-email@example.com', // Replace with your actual email
-      href: 'mailto:your-email@example.com',
+      text: 'jhornakhan50@gmail.com',
+      href: 'mailto:jhornakhan50@gmail.com',
     },
     {
       type: ContactType.Location,
@@ -231,6 +259,5 @@ export const contact: ContactSection = {
  */
 export const socialLinks: Social[] = [
   {label: 'Github', Icon: GithubIcon, href: 'https://github.com/Jhorna028'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/jhorna-akter-2538a2420/'}, // Add your LinkedIn link
-  // You can remove Stack Overflow, Instagram, or Twitter if you don't use them
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/jhorna028/'},
 ];

@@ -8,10 +8,10 @@ const Socials: FC = memo(() => {
       {socialLinks.map(({label, Icon, href}) => (
         <a
           aria-label={label}
-          className="-m-1.5 rounded-md p-1.5 transition-all duration-300 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500  sm:-m-3 sm:p-3"
+          className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-brand-cyan text-brand-cyan transition-all duration-300 hover:bg-brand-cyan hover:text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-cyan sm:h-12 sm:w-12"
           href={href}
           key={label}>
-          <Icon className="h-5 w-5 align-baseline sm:h-6 sm:w-6" />
+          <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
         </a>
       ))}
     </>

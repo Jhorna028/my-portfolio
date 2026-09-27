@@ -6,9 +6,7 @@ const ResumeSection: FC<PropsWithChildren<{title: string}>> = memo(({title, chil
       <div className="col-span-1 flex justify-center md:justify-start">
         {/* Use flex-col to stack the title and the bar naturally */}
         <div className="flex flex-col items-start h-max">
-          <h2 className="text-3xl font-bold uppercase tracking-tight text-white">
-            {title}
-          </h2>
+          <h2 className="text-3xl font-bold uppercase tracking-tight text-white">{title}</h2>
           {/* This bar will now sit perfectly below the text */}
           <div className="mt-2 h-1 w-full bg-orange-500 rounded-full" />
         </div>

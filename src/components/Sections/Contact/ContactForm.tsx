@@ -32,10 +32,10 @@ const ContactForm: FC = memo(() => {
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      /**
-       * This is a good starting point to wire up your form submission logic
-       * */
-      console.log('Data to send: ', data);
+      const mailtoLink = `mailto:jhornakhan50@gmail.com?subject=Contact from ${encodeURIComponent(
+        data.name,
+      )}&body=${encodeURIComponent(data.message + '\n\nSender Email: ' + data.email)}`;
+      window.open(mailtoLink, '_blank');
     },
     [data],
   );

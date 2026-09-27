@@ -1,5 +1,3 @@
-import {ChevronDownIcon} from '@heroicons/react/24/outline';
-import classNames from 'classnames';
 import Image from 'next/image';
 import {FC, memo} from 'react';
 
@@ -8,47 +6,44 @@ import Section from '../Layout/Section';
 import Socials from '../Socials';
 
 const Hero: FC = memo(() => {
-  const {imageSrc, name, description, actions} = heroData;
+  const {name, description} = heroData;
 
   return (
     <Section noPadding sectionId={SectionId.Hero}>
-      <div className="relative flex h-screen w-full items-center justify-center">
-        <Image
-          alt={`${name}-image`}
-          className="absolute z-0 h-full w-full object-cover"
-          placeholder="blur"
-          priority
-          src={imageSrc}
-        />
-        <div className="z-10  max-w-screen-lg px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
-   <h1 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">{name}</h1>
-            {description}
-            <div className="flex gap-x-4 text-neutral-100">
+      <div className="relative flex h-screen w-full items-center justify-center px-8 lg:px-24">
+        {/* Background image is removed to match the solid dark background of the demo */}
+        <div className="z-10 flex w-full flex-col-reverse items-center justify-between gap-12 lg:flex-row">
+          <div className="flex flex-1 flex-col items-start text-left">
+            <h2 className="text-2xl font-semibold text-white sm:text-3xl">Hello, It&apos;s Me</h2>
+            <h1 className="mt-2 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">{name}</h1>
+            <h3 className="mt-4 text-2xl font-bold text-white sm:text-3xl">
+              And I&apos;m a <span className="text-brand-cyan">Computer Science Engineer</span>
+            </h3>
+            <div className="mt-6 text-neutral-300">{description}</div>
+
+            <div className="mt-8 flex gap-x-4">
               <Socials />
             </div>
-            <div className="flex w-full justify-center gap-x-4">
-              {actions.map(({href, text, primary, Icon}) => (
-                <a
-                  className={classNames(
-                    'flex gap-x-2 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium text-white ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
-                    primary ? 'border-orange-500 ring-orange-500' : 'border-white ring-white',
-                  )}
-                  href={href}
-                  key={text}>
-                  {text}
-                  {Icon && <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />}
-                </a>
-              ))}
+
+            <div className="mt-10">
+              <a
+                className="rounded-full bg-brand-cyan px-6 py-3 font-bold text-black shadow-lg transition-transform hover:scale-105 hover:bg-brand-cyan-dark"
+                href={`/#${SectionId.About}`}>
+                More About Me
+              </a>
             </div>
           </div>
-        </div>
-        <div className="absolute inset-x-0 bottom-6 flex justify-center">
-          <a
-            className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
-            href={`/#${SectionId.About}`}>
-            <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
-          </a>
+
+          <div className="flex flex-1 justify-center lg:justify-end">
+            <div className="relative h-64 w-64 rounded-full border-4 border-brand-cyan sm:h-80 sm:w-80 lg:h-[400px] lg:w-[400px] overflow-hidden shadow-2xl">
+              <Image
+                alt={`${name}-image`}
+                className="object-cover"
+                fill
+                src={heroData.imageSrc} // or profileImageSrc if available
+              />
+            </div>
+          </div>
         </div>
       </div>
     </Section>
