@@ -1,11 +1,10 @@
-import Image from 'next/image';
 import {FC, memo} from 'react';
 
 import {aboutData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
 const About: FC = memo(() => {
-  const {profileImageSrc, description, aboutItems} = aboutData;
+  const {description, aboutItems} = aboutData;
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.About}>
       {/* I changed the line below to a Flexbox layout with a gap */}
