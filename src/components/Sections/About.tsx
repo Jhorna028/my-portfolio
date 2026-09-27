@@ -10,13 +10,7 @@ const About: FC = memo(() => {
     <Section className="bg-neutral-800" sectionId={SectionId.About}>
       {/* I changed the line below to a Flexbox layout with a gap */}
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
-        {!!profileImageSrc && (
-          <div className="flex-shrink-0">
-            <div className="relative h-48 w-48 overflow-hidden rounded-xl md:h-64 md:w-64">
-              <Image alt="about-me-image" className="h-full w-full object-cover" src={profileImageSrc} />
-            </div>
-          </div>
-        )}
+        {/* Removed below pic as requested */}
         {/* I added flex-1 here so the text takes up the remaining space properly */}
         <div className="flex flex-col gap-y-6 flex-1 w-full">
           <div className="flex flex-col gap-y-2">

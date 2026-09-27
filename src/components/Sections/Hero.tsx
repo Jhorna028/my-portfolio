@@ -14,7 +14,7 @@ const Hero: FC = memo(() => {
         {/* Background image is removed to match the solid dark background of the demo */}
         <div className="z-10 flex w-full flex-col-reverse items-center justify-between gap-12 lg:flex-row">
           <div className="flex flex-1 flex-col items-start text-left">
-            <h2 className="text-2xl font-semibold text-white sm:text-3xl">Hello, It&apos;s Me</h2>
+            {/* Removed Hello, It's Me */}
             <h1 className="mt-2 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">{name}</h1>
             <h3 className="mt-4 text-2xl font-bold text-white sm:text-3xl">
               And I&apos;m a <span className="text-brand-cyan">Computer Science Engineer</span>
