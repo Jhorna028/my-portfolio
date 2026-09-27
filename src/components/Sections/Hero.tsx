@@ -10,11 +10,11 @@ const Hero: FC = memo(() => {
 
   return (
     <Section noPadding sectionId={SectionId.Hero}>
-      <div className="relative flex h-screen w-full items-center justify-center pt-24 px-8 lg:px-24">
+      <div className="relative flex h-screen w-full items-center justify-center px-8 lg:px-24">
         {/* Background image is removed to match the solid dark background of the demo */}
         <div className="z-10 flex w-full flex-col-reverse items-center justify-between gap-12 lg:flex-row">
           <div className="flex flex-1 flex-col items-start text-left">
-            {/* Removed Hello, It's Me */}
+            <div className="h-8 sm:h-10 lg:h-12 w-full"></div>
             <h1 className="mt-2 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">{name}</h1>
             <h3 className="mt-4 text-2xl font-bold text-white sm:text-3xl">
               And I&apos;m a <span className="text-brand-cyan">Computer Science Engineer</span>
