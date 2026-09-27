@@ -15,7 +15,7 @@ const Hero: FC = memo(() => {
         <div className="z-10 flex w-full flex-col-reverse items-center justify-between gap-12 lg:flex-row">
           <div className="flex flex-1 flex-col items-start text-left">
             {/* Removed Hello, It's Me */}
-            <h1 className="mt-2 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">{name}</h1>
+            <h1 className="mt-16 text-4xl font-extrabold text-white sm:mt-8 sm:text-5xl lg:text-6xl">{name}</h1>
             <h3 className="mt-4 text-2xl font-bold text-white sm:text-3xl">
               And I&apos;m a <span className="text-brand-cyan">Computer Science Engineer</span>
             </h3>
@@ -38,7 +38,7 @@ const Hero: FC = memo(() => {
             <div className="relative h-64 w-64 rounded-full border-4 border-brand-cyan sm:h-80 sm:w-80 lg:h-[400px] lg:w-[400px] overflow-hidden shadow-2xl">
               <Image
                 alt={`${name}-image`}
-                className="object-cover"
+                className="object-cover object-top"
                 fill
                 src={heroData.imageSrc} // or profileImageSrc if available
               />
