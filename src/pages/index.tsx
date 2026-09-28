@@ -18,11 +18,13 @@ const Home: FC = memo(() => {
   return (
     <Page description={description} title={title}>
       <Header />
-      <Hero />
-      <About />
-      <Resume />
-      <Portfolio />
-      <Contact />
+      <main className="pt-16 sm:pt-20">
+        <Hero />
+        <About />
+        <Resume />
+        <Portfolio />
+        <Contact />
+      </main>
       <Footer />
     </Page>
   );

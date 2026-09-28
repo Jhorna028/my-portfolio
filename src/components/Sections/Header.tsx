@@ -75,7 +75,9 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
     const activeClass = classNames(baseClass, 'text-brand-cyan border-b-2 border-brand-cyan');
     const inactiveClass = classNames(baseClass, 'text-white');
     return (
-      <header className="fixed top-0 z-50 hidden w-full bg-brand-nav px-8 py-4 shadow-lg sm:block" id={headerID}>
+      <header
+        className="fixed top-0 z-50 hidden w-full bg-brand-nav px-8 shadow-lg sm:flex sm:h-20 sm:items-center"
+        id={headerID}>
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
           <div className="text-2xl font-bold italic tracking-wide text-white">
             <span className="text-brand-cyan">J</span>HORNA
